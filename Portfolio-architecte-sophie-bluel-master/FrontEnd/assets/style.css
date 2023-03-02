@@ -186,3 +186,44 @@ footer nav ul {
 	margin: 2em
 }
 
+/*Ajout des buttons pour filtrer*/
+
+#btnFilters {
+    display: flex;
+    justify-content: center;
+    margin: 2em 1em 4em 1em;
+}
+
+.btn, .btn-tous {
+    cursor: pointer;
+    margin-right: 1em;
+    font-family: 'Syne';
+    font-weight: 700;
+    font-size: 15px;
+    color: #1D6154;
+    border: 1px solid #1D6154;
+    border-radius: 1em;
+    background-color: white;
+    padding: 0.4em 0.8em 0.4em 0.8em;
+}
+
+.btn-tous:hover, .btn:hover {
+    color: white;
+    background-color: #1D6154;
+}
+
+ .btn.active {
+    color: white;
+    background-color: #1D6154;
+}
+
+.filterDiv {
+    display: none;
+}
+
+
+/* Cette classe est ajoutée aux éléments filtrés */
+
+.show {
+    display: block;
+}
