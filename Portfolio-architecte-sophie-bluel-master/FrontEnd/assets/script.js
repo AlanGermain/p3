@@ -3,6 +3,7 @@ const articles = [];
 //
 function displayArticles(arts) {
   let gallery = document.querySelector(".gallery");
+  //vide les éléments html
   gallery.innerHTML = "";
   console.log(arts);
   // inséré les images dynamiquement
@@ -51,7 +52,10 @@ fetch("http://localhost:5678/api/categories")
       // création d'un intéraction au click affiché chaque catégorie.
       buttonsContainer.appendChild(button);
       button.addEventListener("click", function () {
-        displayArticles(articles.filter((o) => o.categoryId == category.id));
+        displayArticles(
+          //parcours chaque objet et compare leur catégories
+          articles.filter((objet) => objet.categoryId == category.id)
+        );
       });
     });
   });
@@ -109,7 +113,7 @@ fetch("http://localhost:5678/api/categories").then(function (response) {
 
           bouton.addEventListener("click", function () {
             displayWorksList(
-              worksList.filter((o) => o.categoryId == categorie.id)
+              worksList.filter((objet) => objet.categoryId == categorie.id)
             );
           });
 
