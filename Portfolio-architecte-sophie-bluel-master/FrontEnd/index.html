@@ -63,63 +63,74 @@
 
         </section>
 
+
         <section id="portfolio">
             <div class="projets-titre-modifications">
                 <h2>Mes Projets</h2>
 
-                <!--Mode edit : 3e bouton modifier-->
-                <div class="modification-projets" style="display:none">
+                 <!--Mode edit : 3e bouton modifier-->
+                 <div class="modification-projets" style="display:none">
                     <i class="fa-regular fa-pen-to-square"></i>
-                    <a href="#modal1" class="open-modal1">modifier</a>
+                    <a href="#modal1" class="open-modal1" id="open-modal-wrapper">modifier</a>
                 </div>
 
                 <!--Modale d'ouverture-->
-                <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none">
+                <aside id="modal1" class="modal" role="dialog" style="display:none">
+
                     <div class="modal-wrapper fermer-modale">
                         <div class="x-close">
                             <a href="#"><i class="fa-solid fa-xmark icone"></i></a>
                         </div>
                         <h2 class="title-modal">Galerie photo</h2>
-                        <div class="galerie-photo border-bottom"></div>
+                        <div class="galerie-photo border-bottom">
+                            <i class="fa-solid fa-arrows-up-down-left-right move-icone"></i>
+                        </div>
                         <div class="boutons-modale">
-                            <button class="modale-ajout-btn style-input-modale open-modal-upload">Ajouter une photo</button>
+                            <button class="modale-ajout-btn style-input-modale open-modal-upload" id="open-second-modal">Ajouter une photo</button>
                             <a href="#" class="modale-supprimer-btn">Supprimer la galerie</a>
                         </div>
                     </div>
 
                     <!--Modale d'ajout-->
-                    <div id="modal2" class="modal-wrapper modale-upload" style="display:none">
+                    <div id="modal2" class="modale-upload" style="display:none">
                         <div class="icones-retour-ajout">
                             <a href="#"><i class="fa-solid fa-arrow-left arrow"></i></i></a>
                         </div>
                         <div class="icone-fermer-upload">
-                            <a href="#"><i class="fa-solid fa-xmark icone"></i></a>
+                            <a href="#"><i class="fa-solid fa-xmark icone cross-upload"></i></a>
                         </div>
-                        <h2 class="title-modal">Ajout photo</h2>
 
-                        <div class="image-upload">
-                            <i class="fa-sharp fa-regular fa-image image-upload-icone"></i>
-                            <input type="submit" value="+ Ajouter photo">
-                            <p class="sous-titre-upload">jpg, png : 4mo max</p>
-                        </div>
-                        <div class="form-upload">
-                            <label class="upload-title-form">Titre</label>
-                            <input type="name" class="input" name="title-project" id="title-project" required>
+                        <form method="post" class="form-upload">
+                            <h2 class="title-modal">Ajout photo</h2>
 
-                            <label for="categorie-projet" class="upload-title-form">Catégorie</label>
-                            <select name="categories" class="input" id="categorie-projet" required>
+                            <div class="image-upload">
+                                <i class="fa-sharp fa-regular fa-image image-upload-icone"></i>
+                                <!-- <input type="submit" value="+ Ajouter photo"> -->
+                                <label for="upload-image" class="title-upload-image">+ Ajouter une photo</label>
+                                <input type="file" id="upload-image" name="upload-image" max-size="4000" accept=".jpg, .jpeg, .png" multiple>
+                                <p class="sous-titre-upload">jpg, png : 4mo max</p>
+                            </div>
+                            <div class="form-category">
+                                <label class="upload-title-form">Titre</label>
+                                <input type="name" class="input" name="title-project" id="title-project" required>
+
+                                <label for="categorie-projet" class="upload-title-form">Catégorie</label>
+                                <select name="categories" class="input" id="categorie-projet" required>
                                 <option value=""></option>
                                 <option value="Objet">Objet</option>
                                 <option value="Appartement">Appartement</option>
                                 <option value="Hôtel">Hôtel & Appartement</option>
                             </select>
-                        </div>
+                            </div>
+                        </form>
 
                         <input type="submit" value="Valider" class="style-input-modale upload-input-submit">
                     </div>
                 </aside>
 
             </div>
+
+            <script src="assets/admin.js" defer></script>
 
             <script src="assets/admin.js" defer></script>
         </section>
