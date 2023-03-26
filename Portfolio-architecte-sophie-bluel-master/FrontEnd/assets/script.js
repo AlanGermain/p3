@@ -9,11 +9,13 @@ function displayArticles(arts) {
   // inséré les images dynamiquement
   arts.forEach(function (article) {
     let figure = document.createElement("figure");
+    figure.setAttribute("data-id", article.id);
     let images = document.createElement("img");
     images.src = article.imageUrl;
     images.crossOrigin = "anonymous";
     let figcaption = document.createElement("figcaption");
     figcaption.innerHTML = article.title;
+    console.log(figure);
 
     gallery.appendChild(figure);
     figure.appendChild(images);

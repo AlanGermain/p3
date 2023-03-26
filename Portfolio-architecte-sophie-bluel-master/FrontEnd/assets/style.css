@@ -331,7 +331,7 @@ footer nav ul {
 
 /* Modale de début */
 
-.modal {
+#aside-modals {
     width: 35%;
     height: 40em;
     position: fixed;
@@ -380,11 +380,14 @@ footer nav ul {
     padding-bottom: 1.5em;
 }
 
+.modale-ajout-btn {
+    background-color: #1D6154;
+    border: 1px solid #1D6154;
+}
+
 .style-input-modale {
     font-family: 'Syne';
     color: white;
-    background-color: #1D6154;
-    border: 1px solid #1D6154;
     width: 250px;
     border-radius: 60px;
     padding: 0.5em 0.3em 0.5em 0.3em;
@@ -416,12 +419,20 @@ footer nav ul {
     color: white;
 }
 
-.move-icone {
+.figure-modale .move-icone {
+    display: none;
     font-size: 10px;
     color: white;
+    position: absolute;
+    top: 13px;
+    left: 3.2em;
     background-color: black;
     padding: 2px;
     border-radius: 2px;
+}
+
+.figure-modale:hover .move-icone {
+    display: flex;
 }
 
 .bouton-modale-delete {
@@ -434,6 +445,7 @@ footer nav ul {
     right: 13px;
     border-radius: 2px;
     display: flex;
+    padding-top: 2px;
     justify-content: center;
     align-items: center;
     font-size: 9px;
@@ -454,7 +466,7 @@ footer nav ul {
     overflow: auto;
 }
 
-.icones-retour-ajout {
+.icone-retour-ajout {
     align-self: flex-start;
     margin: 1.5em 1.5em 1.5em 1.5em;
 }
@@ -476,14 +488,20 @@ footer nav ul {
 
 .image-upload-icone {
     color: #CBD6DC;
-    font-size: 60px;
+    font-size: 70px;
     margin-top: 0.1em;
+}
+
+.image-load {
+    width: 60%;
+    align-items: center;
+    height: 10.5em;
 }
 
 .image-upload {
     background-color: #E8F1F6;
     height: 10.5em;
-    width: 85%;
+    width: 75%;
     margin: 0em 0em 2em 0em;
     display: flex;
     flex-direction: column;
@@ -498,10 +516,14 @@ footer nav ul {
     background-color: #CBD6DC;
     color: #306685;
     border: 0px solid #CBD6DC;
-    border-radius: 1em;
+    border-radius: 1.2em;
     cursor: pointer;
     padding: 0.6em 0.8em 0.6em 0.8em;
-    margin: 0.7em 0em 0.5em 0em;
+    margin: 0.5em 0em -0.7em 0em;
+}
+
+#upload-image {
+    opacity: 0;
 }
 
 .form-category {
@@ -530,9 +552,25 @@ footer nav ul {
     margin: 0em 0em -1em 0em;
 }
 
-.modale-upload>.upload-input-submit {
+.upload-input-submit {
     width: 250px;
     background-color: #A7A7A7;
     border: 0px;
 }
 
+.upload-input-submit:hover {
+    background-color: #1D6154;
+    border: 0px;
+}
+
+#error-message-work {
+    color: #B1663C;
+    display: none;
+    margin-top: 1em;
+}
+
+#validation-message-work {
+    display: none;
+    color: #1D6154;
+    margin-top: 1em;
+}
