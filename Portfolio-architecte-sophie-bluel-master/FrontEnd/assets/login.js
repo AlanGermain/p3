@@ -37,25 +37,4 @@ form.addEventListener("submit", async (event) => {
     // Affichez un message d'erreur si la connexion a échoué
     alert("Erreur dans l'identifiant ou le mot de passe");
   }
-  //LOGOUT
-  //fonction pour faire réapparaitre et disparaitre les éléments
-  function showViewModeElements() {
-    const adminModeElements = document.querySelectorAll("#adminMode");
-    adminModeElements.forEach((element) => {
-      element.style.display = "none";
-    });
-  }
-  function cacheViewModeElements() {
-    const adminModeElements = document.querySelectorAll("#cacheMode");
-    adminModeElements.forEach((element) => {
-      element.style.display = "flex";
-    });
-  }
-
-  const logout = document.querySelector(".deconnexion");
-  logout.addEventListener("click", function () {
-    sessionStorage.clear("token");
-    showViewModeElements();
-    cacheViewModeElements();
-  });
 });
