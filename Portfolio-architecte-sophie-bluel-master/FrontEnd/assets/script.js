@@ -1,12 +1,8 @@
-// 0. Vérifier si le token est bien enregistrer dans le sessionStorage :
-// console.log(sessionStorage);
-
-// 1.1. Récupérer le token
+//  Récupérer le token
 const getToken = window.sessionStorage.getItem("token");
-//console.log(getToken);
-// 1.2. Pouvoir se déconnecter :
+//  Pouvoir se déconnecter :
 function deconnexion() {
-  // Vider le sessionStorage
+  // Vider le sessionStorage et donc le token stocker
   sessionStorage.clear();
   // Retourner à la page d'accueil
   window.location.href = "index.html";
@@ -473,6 +469,7 @@ function genererFigure(article) {
 }
 //--------------------------------------Ajout de projet---------------------------------------------------------
 async function addProjet(event) {
+  //prevent defaut pour pas rafraichir
   event.preventDefault();
   //Récupération des inputs
   const inputFile = document.getElementById("input-file");
